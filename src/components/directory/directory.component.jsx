@@ -2,11 +2,11 @@ import React from 'react';
 
 import MenuItem from '../menu-item/menu-item.component';
 
-import '../directory/directory.styles.scss';
+import './directory.styles.scss';
 
 class Directory extends React.Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
         this.state = {
            sections: [
@@ -41,25 +41,20 @@ class Directory extends React.Component {
               size: 'large',
               id: 5,
               linkUrl: 'shop/mens'
-            }], 
-        }
-
+            }
+          ] 
+        };
     }
 
     render() {
-        return (
-            <div className= 'directory-menu'>
-                {
-                    this.state.sections.map(({id, ...othierSectionProps}) => (
-                        <MenuItem key={id} {...othierSectionProps} />
-
-                    ))
-                }
-            
-            </div>
-        )
-
+      return (
+        <div className='directory-menu'>
+          {this.state.sections.map(({ id, ...otherSectionProps }) => (
+            <MenuItem key={id} {...otherSectionProps} />
+          ))}
+        </div>
+      );
     }
-}
-
-export default Directory;
+  }
+  
+  export default Directory;
